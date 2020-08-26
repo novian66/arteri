@@ -360,6 +360,7 @@ class Home extends CI_Controller {
 	 */
 	public function gologin()
 	{
+		$this->load->library('encryption');
 		$username=$this->__sanitizeString($this->input->post('username'));
 		//$password=md5($this->input->post('password'));
 		$password=$this->input->post('password');
@@ -377,7 +378,11 @@ class Home extends CI_Controller {
 
     if($user) {
 			// check password
-			if (password_verify($password, $user->password)) {
+			// print_r($user->password);
+			// print_r(password_verify($password, $user->password));
+			// die();
+			$passworddb = $this->encryption->decrypt($user->password);
+			if ($password==$passworddb) {
 				$_SESSION['username'] = $username;
 				$_SESSION['id_user'] = $user->id;
 				$_SESSION['tipe'] = $user->tipe;
