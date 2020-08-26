@@ -126,21 +126,21 @@ class Home extends CI_Controller {
 		  (IF(DATE_ADD(a.tanggal,INTERVAL k.retensi YEAR) < CURDATE(),'sudah','belum')) AS f,
 		  nama_lokasi,nama_media,nama_pencipta,nama_pengolah,mu.name as user_name
 		  FROM data_arsip AS a
-		  JOIN master_kode AS k ON k.id=a.kode
-		  JOIN master_lokasi AS l ON l.id=a.lokasi
-		  JOIN master_media AS m ON m.id=a.media
-		  JOIN master_pencipta AS p ON p.id=a.pencipta
-		  JOIN master_pengolah AS pn ON pn.id=a.unit_pengolah
-		  Join master_user as mu on mu.username=a.username
+		  LEFT JOIN master_kode AS k ON k.id=a.kode
+		  LEFT JOIN master_lokasi AS l ON l.id=a.lokasi
+		  LEFT JOIN master_media AS m ON m.id=a.media
+		  LEFT JOIN master_pencipta AS p ON p.id=a.pencipta
+		  LEFT JOIN master_pengolah AS pn ON pn.id=a.unit_pengolah
+		  LEFT JOIN master_user as mu on mu.username=a.username
 		   ";
 
 		$q_count = "SELECT COUNT(*) AS jmldata
 		FROM data_arsip AS a
-		JOIN master_kode AS k ON k.id=a.kode
-		JOIN master_lokasi AS l ON l.id=a.lokasi
-		JOIN master_media AS m ON m.id=a.media
-		JOIN master_pencipta AS p ON p.id=a.pencipta
-		JOIN master_pengolah AS pn ON pn.id=a.unit_pengolah";
+		LEFT JOIN master_kode AS k ON k.id=a.kode
+		LEFT JOIN master_lokasi AS l ON l.id=a.lokasi
+		LEFT JOIN master_media AS m ON m.id=a.media
+		LEFT JOIN master_pencipta AS p ON p.id=a.pencipta
+		LEFT JOIN master_pengolah AS pn ON pn.id=a.unit_pengolah";
 		if($_SESSION['akses_klas']!='') {
 			$k = explode(',',$_SESSION['akses_klas']);
 			$k = array_filter($k);
@@ -214,7 +214,7 @@ class Home extends CI_Controller {
 		}
 		*/
 		if ($offset>0) $q .= "OFFSET $offset";
-		//echo($q); die();
+		echo($q); die();
 
 		$hsl = $this->db->query($q);
 		$data['data'] = $hsl->result_array();
@@ -378,7 +378,7 @@ class Home extends CI_Controller {
 
     if($user) {
 			// check password
-			// print_r($user->password);
+			// print_r($passworddb);
 			// print_r(password_verify($password, $user->password));
 			// die();
 			$passworddb = $this->encryption->decrypt($user->password);
