@@ -37,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <thead>
         <th class="width-sm">No</th>
         <th>Username</th>
-        <th>Akses Klasifikasi</th>
+        <th>Nama</th>
         <th>Akses Modul</th>
         <th>Tipe</th>
         <th class="width-sm"></th>
@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 echo "<tr>";
                 echo "<td>".$no."</td>";
                 echo "<td>".$u['username']."</td>";
-                echo "<td>".$u['akses_klas']."</td>";
+                echo "<td>".$u['name']."</td>";
                 echo "<td>";
 				$mm = $u['akses_modul'];
 				if($mm!="") {
