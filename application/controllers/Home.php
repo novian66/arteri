@@ -214,7 +214,7 @@ class Home extends CI_Controller {
 		}
 		*/
 		if ($offset>0) $q .= "OFFSET $offset";
-		echo($q); die();
+		// echo($q); die();
 
 		$hsl = $this->db->query($q);
 		$data['data'] = $hsl->result_array();
