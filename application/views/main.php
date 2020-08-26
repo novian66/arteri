@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<form class="navbar-form navbar-left width-half-full" method="get" action="<?php echo site_url('/home/search'); ?>">
 			<div class="input-group width-full">
-			<input type="text" name="katakunci" class="form-control" placeholder="nomor arsip/kata kunci uraian" /><span class="input-group-btn">
+			<input type="text" name="katakunci" class="form-control" placeholder="Nama Dokumen/kata kunci uraian" /><span class="input-group-btn">
 				<button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button></span>
 		    </div>
 		</form>
@@ -143,15 +143,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<table id="tblhslsrc" class="table table-bordered table-hover" cellspacing="0" width="100%">
 				<thead>
 					<tr>
-						<th>No Arsip</th>
+						<th>Nama Dokumen</th>
 						<th>Tanggal</th>
-						<th>Kode Klasifikasi</th>
+						<th>Klasifikasi</th>
 						<th>Uraian</th>
 						<th>Ket</th>
 						<th>File</th>
 						<th>Jumlah</th>
-						<th>No. Box</th>
-						<th>Retensi</th>
+						<th>user</th>
 						<th class="width-sm"></th>
 						<th class="width-sm"></th>
 						<th class="width-sm"></th>
@@ -172,8 +171,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								echo "<td><a href='".base_url('files/'.$a['file'])."' target='_blank'><span class='glyphicon glyphicon-save' aria-hidden='true'></span></a></td>";
 							}
 							echo "<td>".$a['jumlah']."</td>";
-							echo "<td>".$a['nobox']."</td>";
-							echo "<td ".($a['f']=='sudah'?"class='danger'":"").">".$a['b']."</td>";
+							echo "<td>".$a['user_name']."</td>";
 							echo "<td><a href='".site_url('home/view/'.$a['id'])."' ><i class=\"glyphicon glyphicon-search\"></i></a></td>";
 							echo "<td>";
 							if(isset($_SESSION['akses_modul']['entridata']) && $_SESSION['akses_modul']['entridata']=='on') {

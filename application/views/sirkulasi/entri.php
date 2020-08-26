@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="col-md-12"> <!-- 1st column -->
 
 <div class="form-group">
-	<label class="col-md-2 control-label" for="noarsip">Nomor Arsip</label>
+	<label class="col-md-2 control-label" for="noarsip">Nama Dokumen</label>
 	<div class="col-md-8">
 	<input type="text" id="snoarsip" name="noarsip" class="form-control xhr"
 	  placeholder="Ketikan 3 huruf/angka pertama kode arsip atau klasifikasi arsip" 

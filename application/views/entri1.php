@@ -32,7 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="col-md-6"> <!-- 1st column -->
 
 <div class="form-group">
-	<label class="col-md-4 control-label" for="noarsip">Nomor Arsip</label>
+	<label class="col-md-4 control-label" for="noarsip">Nama Dokumen</label>
 	<div class="col-md-8">
 	<input id="noarsip" name="noarsip" class="form-control input-md" type="text" required>
 	</div>
@@ -63,20 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </div>
 
-<div class="form-group">
-	<label class="col-md-4 control-label" for="unitpengolah">Unit Pengolah</label>
-	<div class="col-md-8">
-	<select id="unitpengolah" name="unitpengolah" class="form-control input-md chosen">
-	<?php
-		if(isset($unitpengolah)){
-			foreach($unitpengolah as $k) {
-				echo "<option value='".$k['id']."' >".$k['nama_pengolah']."</option>";
-			}
-		}
-	?>
-	</select>
-	</div>
-</div>
+
 
 <div class="form-group">
 	<label class="col-md-4 control-label" for="kode">Kode Klasifikasi</label>
@@ -150,12 +137,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </div>
 
-<div class="form-group">
-	<label class="col-md-4 control-label" for="nobox">Nomor Box</label>
-	<div class="col-md-8">
-	<input id="nobox" name="nobox" class="form-control input-md" type="text">
-	</div>
-</div>
+
 
 <div class="form-group">
 	<label class="col-md-4 control-label" for="nobox">File</label>

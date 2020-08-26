@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="col-md-6"> <!-- 1st column -->
 
 <div class="view-group row">
-	<label class="col-md-6 control-label" for="noarsip">Nomor Arsip</label>
+	<label class="col-md-6 control-label" for="noarsip">Nama Dokumen</label>
 	<label class="col-md-6 isi"><?php echo $noarsip; ?></label>
 </div>
 
@@ -46,10 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<label class="col-md-6 isi"><?php echo $nama_pencipta; ?></label>
 </div>
 
-<div class="view-group row">
-	<label class="col-md-6 control-label" for="unitpengolah">Unit Pengolah</label>
-	<label class="col-md-6 isi"><?php echo $nama_pengolah; ?></label>
-</div>
+
 
 <div class="view-group row">
 	<label class="col-md-6 control-label" for="kode">Kode Klasifikasi</label>
@@ -84,10 +81,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<label class="col-md-6 isi"><?php echo $jumlah; ?></label>
 </div>
 
-<div class="view-group row">
-	<label class="col-md-6 control-label" for="nobox">Nomor Box</label>
-	<label class="col-md-6 isi"><?php echo $nobox; ?></label>
-</div>
+
 
 <div class="view-group row">
 	<label class="col-md-6 control-label" for="nobox">File</label>

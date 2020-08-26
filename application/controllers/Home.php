@@ -124,13 +124,14 @@ class Home extends CI_Controller {
 
 		$q = "SELECT a.*, k.retensi, DATE_ADD(a.tanggal,INTERVAL k.retensi YEAR) AS b,k.kode nama_kode,
 		  (IF(DATE_ADD(a.tanggal,INTERVAL k.retensi YEAR) < CURDATE(),'sudah','belum')) AS f,
-		  nama_lokasi,nama_media,nama_pencipta,nama_pengolah
+		  nama_lokasi,nama_media,nama_pencipta,nama_pengolah,mu.name as user_name
 		  FROM data_arsip AS a
 		  JOIN master_kode AS k ON k.id=a.kode
 		  JOIN master_lokasi AS l ON l.id=a.lokasi
 		  JOIN master_media AS m ON m.id=a.media
 		  JOIN master_pencipta AS p ON p.id=a.pencipta
 		  JOIN master_pengolah AS pn ON pn.id=a.unit_pengolah
+		  Join master_user as mu on mu.username=a.username
 		   ";
 
 		$q_count = "SELECT COUNT(*) AS jmldata
@@ -204,6 +205,7 @@ class Home extends CI_Controller {
 		if ($offset>=$this->data_per_page) {
 			$data['current_page'] = floor(($offset+$this->data_per_page)/$this->data_per_page);
 		}
+		
 		/*
 		if ($page<2) {
 			$offset = 0;
@@ -219,7 +221,8 @@ class Home extends CI_Controller {
 
 		$jmldata = $this->db->query($q2)->row()->jmldata;
 		$data['jml']=$jmldata;
-
+		// echo "<pre>";
+		// print_r($data);die();
 		$q = "select distinct ket from data_arsip order by ket asc";
 		$hsl = $this->db->query($q);
 		$data['ket'] = $hsl->result_array();

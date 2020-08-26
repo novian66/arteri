@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<form class="navbar-form navbar-left width-half-full" method="get" action="<?php echo site_url('/sirkulasi/datalist'); ?>">
 			<div class="input-group width-full">
-			<input type="text" name="katakunci" class="form-control" placeholder="nomor arsip/kode user" /><span class="input-group-btn">
+			<input type="text" name="katakunci" class="form-control" placeholder="Nama Dokumen/kode user" /><span class="input-group-btn">
 				<button class="btn btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i></button></span>
 		    </div>
 		</form>
@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<table id="tblhslsrc" class="table table-bordered table-hover" cellspacing="0" width="100%">
 				<thead>
 					<tr>
-						<th>No Arsip</th>
+						<th>Nama Dokumen</th>
 						<th>Peminjam</th>
 						<th>Keperluan</th>
 						<th>Tgl. Pinjam</th>
